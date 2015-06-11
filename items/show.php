@@ -8,9 +8,10 @@
         echo metadata('item', array('Dublin Core', 'Description'))
         // echo all_element_texts('item'); 
         ?>
-    </div>
 
-    <div id="elements">
+        <br>
+
+      <div id="elements">
         <?php 
 
         $elements = array('Subject', 'Creator', 'Source');
@@ -18,17 +19,21 @@
         foreach ($elements as $element) {
           $contents = metadata('item', array('Dublin Core', $element));
           if (!empty($contents)) {
-            echo $element.': '.$contents.'<br>';
+            echo '<b>'.$element.':</b> '.$contents.'<br>';
           };
         };
 
         ?>
     </div>
+    </div>
 
-    <h3><?php echo __('Files'); ?></h3>
     <div id="item-images">
          <?php echo files_for_item(); ?>
     </div>
+
+ 
+
+
 
    <?php if(metadata('item','Collection Name')): ?>
       <div id="collection" class="element">
