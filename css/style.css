@@ -1238,13 +1238,19 @@ ul.title-list {
 
 /* @end */
 /* @group ----- Collections/Show ----- */
+
+#collection-items {
+  width: 450px; 
+  float: left;
+  padding-left: 15px;
+}
 .collections .item-img {
   float: left;
   margin: 0 1.5em 0 0;
 }
 .collections .item-img a {
   display: block;
-  height: 6em;
+  height: 10em;
   border: 1px solid #ccc;
   padding: 2px;
 }
