@@ -26,8 +26,7 @@
     </div>
 
     <h3><?php echo __('Files'); ?></h3>
-    <div id="item-images">
-    </div>
+ 
 
 
 
@@ -40,7 +39,6 @@
     <?php endif;?>
 
  
-       <?php fire_plugin_hook('public_items_show', array('view' => $this,  'collection' => $collection)); ?>
 
 
 
