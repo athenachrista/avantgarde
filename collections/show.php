@@ -6,10 +6,10 @@
     <div id="description">
         <?php 
         echo metadata( 'collection', array('Dublin Core', 'Description'))
-        // echo all_element_texts( 'collection'); 
         ?>
     </div>
 
+    <!-- metadata element sidebar -->
     <div id="elements">
         <?php 
 
@@ -23,23 +23,7 @@
         };
 
         ?>
-    </div>
-
-    <h3><?php echo __('Files'); ?></h3>
- 
-
-
-
-     <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata( 'collection','has tags')): ?>
-    <div id="item-tags" class="element">
-        <h3><?php echo __('Tags'); ?></h3>
-        <div class="element-text"><?php echo tag_string( 'collection'); ?></div>
-    </div>
-    <?php endif;?>
-
- 
-
+    </div> 
 
 
 </div> <!-- End of Primary. -->
