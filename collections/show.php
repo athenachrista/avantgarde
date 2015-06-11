@@ -6,7 +6,36 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
 
 <h1><?php echo $collectionTitle; ?></h1>
 
-<?php echo all_element_texts('collection'); ?>
+   <div id="description">
+        <?php 
+        echo metadata('collection', array('Dublin Core', 'Description'))
+        ?>
+
+        <br><br>
+
+      <div id="elements">
+        <?php 
+
+        // add Dublin Core elements you want to display here
+        $elements = array(
+          'Subject',
+          'Creator',
+          'Source',
+          'Coverage',
+          'Date'
+          );
+
+        foreach ($elements as $element) {
+          $contents = metadata('collection', array('Dublin Core', $element));
+          if (!empty($contents)) {
+            echo '<b>'.$element.':</b> '.$contents.'<br>';
+          };
+        };
+
+        ?>
+      </div>
+    </div>
+
 
 <div id="collection-items">
     <h2><?php echo link_to_items_browse(__('Items in the %s Collection', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>

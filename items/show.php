@@ -2,11 +2,9 @@
 <div id="primary">
     <h1><?php echo metadata('item', array('Dublin Core','Title')); ?></h1>
 
-    <!-- Items metadata -->
     <div id="description">
         <?php 
         echo metadata('item', array('Dublin Core', 'Description'))
-        // echo all_element_texts('item'); 
         ?>
 
         <br>
@@ -14,7 +12,14 @@
       <div id="elements">
         <?php 
 
-        $elements = array('Subject', 'Creator', 'Source');
+        // add Dublin Core elements you want to display here
+        $elements = array(
+          'Subject',
+          'Creator',
+          'Source',
+          'Coverage',
+          'Date'
+          );
 
         foreach ($elements as $element) {
           $contents = metadata('item', array('Dublin Core', $element));
@@ -24,7 +29,7 @@
         };
 
         ?>
-    </div>
+      </div>
     </div>
 
     <div id="item-images">
