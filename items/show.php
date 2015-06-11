@@ -3,8 +3,26 @@
     <h1><?php echo metadata('item', array('Dublin Core','Title')); ?></h1>
 
     <!-- Items metadata -->
-    <div id="item-metadata">
-        <?php echo all_element_texts('item'); ?>
+    <div id="description">
+        <?php 
+        echo metadata('item', array('Dublin Core', 'Description'))
+        // echo all_element_texts('item'); 
+        ?>
+    </div>
+
+    <div id="elements">
+        <?php 
+
+        $elements = array('Subject', 'Creator', 'Source');
+
+        foreach ($elements as $element) {
+          $contents = metadata('item', array('Dublin Core', $element));
+          if (!empty($contents)) {
+            echo $element.': '.$contents.'<br>';
+          };
+        };
+
+        ?>
     </div>
 
     <h3><?php echo __('Files'); ?></h3>

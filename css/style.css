@@ -688,6 +688,20 @@ header:after {
 /* @end */
 /* @group ----- Items ----- */
 
+#description{
+  font-size: 25px;
+  line-height: 1.2em;
+  width: 500px;
+  display: block;
+  float: left;
+}
+
+#elements{
+  width: 150px;
+  float: left;
+  display: block;
+}
+
 
 .items #content {
   position: relative;
